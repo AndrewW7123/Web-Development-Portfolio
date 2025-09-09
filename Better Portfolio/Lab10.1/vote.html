@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--
+Andrew Whitehead
+Simple Voting App
+-->
+<html>
+
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width">
+    <title>Voting App</title>
+</head>
+
+<body>
+    <div style="text-align: center; font-size: 25px;">
+        <h1>Voting App</h1>
+        <form action="polls.php" method="post">
+            <input style="font-size: 25px; width: 250px;" type="number" name="id" placeholder="Poll ID (1-6)" min="1" max="6" required><br>
+            <input style="font-size: 25px; width: 250px;" type="number" name="option" placeholder="Poll Option (1-4)" min="1" max="4" required><br>
+            <input style="font-size: 25px;" type="submit">
+        </form>
+    </div>
+    
+</body>
+
+</html>

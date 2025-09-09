@@ -1,2 +1,2 @@
 # Web-Development-Portfolio
-A cumulative portfolio consisting of the various projects and activities I worked on over the course of my first-year web development class 
+A cumulative portfolio consisting of the various projects and activities I worked on over the course of my first-year web development class. Some projects in the "Work" tab function without the use of a web server, but the rest require some kind of server. For the purposes of viewing this portfolio, XAMPP using Apache Web Server and MySQL DataBase would be the simplest, or you may use something similar. "PROJECT-MM" tab on the Fifty/Fifty team project website is not functional currently.

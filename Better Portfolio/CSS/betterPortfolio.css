@@ -1,0 +1,122 @@
+/*
+Andrew Whitehead
+Feb 1, 2025
+*/
+
+#container {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+#header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: deepskyblue;
+    color: black;
+    font-size: 20px;
+    padding: 25px;
+}
+
+#mac {
+    width: 12%;
+}
+
+#nav {
+    display: flex;
+    justify-content: center;
+    background-color: darkblue;
+}
+
+#intro {
+    text-align: center;
+    background-color: rgb(216, 216, 216);
+    margin: 30px;
+    border-radius: 20px;
+    font-size: 22px;
+    width: 80%;  
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tile {
+    text-align: center;
+    background-color: rgb(216, 216, 216);
+    margin: 30px;
+    border-radius: 20px;
+    font-size: 22px;
+    width: 70%;
+    padding: 1%;
+}
+
+#drew {
+    width: 25%;
+    margin: 2%;
+}
+
+#fifty {
+    width: 30%;
+    margin: 2%;
+}
+
+#eng {
+    width: 30%;
+    margin: 2%;
+}
+
+.navlink {
+    margin: 1%;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 18px;
+    background-color: maroon;
+    color: white;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+#footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: blue;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    padding-bottom: 0;
+}
+
+@media (max-width: 800px) {
+    .navlink {
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+}
+
+@media (max-width: 570px) {
+    .navlink {
+        font-size: 10px;
+    }
+
+    #header {
+        padding: 10px;
+    }
+
+    #mac {
+        width: 20%;
+    }
+}
+
+@media (max-width: 395px) {
+    #nav {
+        flex-direction: column;
+    }
+}

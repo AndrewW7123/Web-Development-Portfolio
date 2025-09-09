@@ -1,0 +1,155 @@
+/*
+Andrew Whitehead (Student Number: 400581822)
+Feb 20, 2025
+CSS stylesheet for the design of a simple memory game
+*/
+
+body {
+    margin: 0px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color: yellow;
+}
+
+.tile {
+    padding: 2%;
+    margin: 1%;
+    background-color: blue;
+    width: 110px;
+    height: 110px;
+    border-radius: 10%;
+    cursor: pointer;
+}
+
+.tile img {
+    max-width: 110px;
+    max-height: 110px;
+    opacity: 0;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+#intro {
+    margin: 2%;
+    padding: 2%;
+    text-align: center;
+    background-color: rgb(247, 79, 79);
+    border-radius: 5%;
+}
+
+.prompts {
+    margin: 3%;
+    font-size: 20px;
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.game {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+}
+
+#header {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 1%;
+    background-color: orange;
+}
+
+#menu {
+    visibility: hidden; 
+    color: blue;
+}
+
+#menu:hover {
+    cursor: pointer;
+    color: rgb(5, 5, 151);
+}
+
+#ins {
+    text-align: center;
+    width: 200px;
+    margin: auto;
+}
+
+#help {
+    cursor: pointer;
+    color: blue;
+}
+
+#submit {
+    margin: 2%;
+    background-color: rgb(190, 13, 13);
+    font-size: 30px;
+}
+
+#submit:hover {
+    cursor: pointer;
+    background-color: #8a0707;
+}
+
+#new:hover {
+    cursor: pointer;
+}
+
+#new {
+    text-decoration: underline;
+    color: blue;
+}
+
+#win {
+    text-align: center;
+    background-color: red;
+}
+
+@media (max-width: 940px) {
+    .tile {
+        width: 70px;
+        height: 70px;
+    }
+
+    .tile img {
+        max-width: 70px;
+        max-height: 70px;
+    }
+}
+
+@media (max-width: 580px) {
+    .tile {
+        width: 40px;
+        height: 40px;
+    }
+
+    .tile img {
+        max-width: 40px;
+        max-height: 40px;
+    }
+
+    #header {
+        font-size: 12px;
+    }
+
+    .prompts {
+        font-size: 15px;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+
+    #submit {
+        font-size: 20px;
+    }
+}

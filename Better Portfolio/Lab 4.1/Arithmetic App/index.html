@@ -1,0 +1,37 @@
+<!doctype html>
+<!--
+Simple arithmetic app for JavaScript practice
+-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Arithmetic App</title>
+</head>
+
+<body>
+    <div>
+        <script>
+            let again = true;
+
+            while (again == true) {
+                let x = Math.floor(Math.random() * 201) - 100;
+                let y = Math.floor(Math.random() * 201) - 100;
+                let input = prompt("What is " + x + " + " + y + "? Enter here: ");
+
+                while (input != (x + y)) {
+                    alert("Incorrect, try again!");
+                    input = prompt("What is " + x + " + " + y + "? Enter here: ");
+                }
+                
+                alert("Correct!");
+
+                again = confirm("Play again? Enter here: ");
+            }
+
+            alert("Thanks for playing, goodbye!");
+        </script>
+    </div>
+</body>
+
+</html>
