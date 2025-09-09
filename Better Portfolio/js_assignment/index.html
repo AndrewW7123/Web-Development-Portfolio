@@ -1,0 +1,75 @@
+<!doctype html>
+<!--
+Andrew Whitehead (Student Number: 400581822)
+Feb 20, 2025
+HTML program for a simple memory game designed with the use of javascript
+-->
+<html>
+
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="CSS/jsassign.css">
+    <link rel="icon" href="Images/brain.png" type="image/png">
+    <script src="JS/jsassign.js"></script>
+    
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <h2><a href="game.html" id="menu">Menu</a></h2>
+            <h1 style="font-size: 35px;" id="diff">Memory Game</h1>
+            <h2 style="visibility: hidden;" id="score">Score: 0</h2>
+        </div>
+        <div id="intro">
+            <h3 style="color: white;" id="valid"></h3>
+            <h1 class="title">Welcome to this simple memory game!</h1>
+            <h2 class="title">Before you start, please respond to the below prompts</h2>
+            <div>
+                <p class="prompts">How would you like to be called? Enter below:</p>
+                <input type="text" placeholder="Ex: John Doe" id="name">
+                <p class="prompts">How old are you? Enter below:</p>
+                <input type="number" placeholder="Ex: 18" id="age">
+                <p class="prompts">Pick a colour for the cards below:</p>
+                <input type="color" id="cardCol">
+                <p><input type="button" id="submit" value="Submit and Play!"></p>
+            </div>
+        </div>
+        <div id="main" style="display: none;">
+            <div id="win">
+            </div>
+            <div class="game" id="row1">
+                <div class="tile">
+                    <img src="Images/car.png" class="card" id="1">
+                </div>
+                <div class="tile" >
+                    <img src="Images/egg.png" class="card" id="2">
+                </div>
+                <div class="tile" >
+                    <img src="Images/snowflake.png" class="card" id="3">
+                </div>
+            </div>
+            <div class="game" id="row2">
+                <div class="tile">
+                    <img src="Images/egg.png" class="card" id="7">
+                </div>
+                <div class="tile">
+                    <img src="Images/snowflake.png" class="card" id="8">
+                </div>
+                <div class="tile">
+                    <img src="Images/car.png" class="card" id="9">
+                </div>
+            </div>
+            <div class="game" id="row3">
+            </div>
+            <div class="game" id="row4">
+            </div>
+            <div id=ins>
+                <h2 style="text-decoration: underline;" id="help">Instructions</h2>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

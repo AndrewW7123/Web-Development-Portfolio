@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--
+Turn this into a working arithmetic app.
+Sam Scott, McMaster, 2024
+-->
+<html>
+    <head>
+        <title>Arithmetic</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <style type="text/css">
+            body {
+                font-size:20px;
+                font-family:sans-serif;
+            }
+            input[type=number], input[type=text], select {
+                width:50px;
+                font-family: sans-serif;
+                text-align:right;
+                font-size:20px;
+            }
+            input[type=button] {
+                font-size:20px;
+                width:170px;
+            }
+            #wrapper {
+                margin:auto;
+                width:380px;
+                background-color:blanchedalmond;
+                padding:10px;
+                padding-top:0px;
+            }
+        </style>
+        <script>
+            window.addEventListener("load", function(event){
+                function calc(event) {
+                    let x = document.getElementById("num1").value;
+                    let y = document.getElementById("num2").value;
+                    let z = document.getElementById("operation").value;
+                    x = parseInt(x);
+                    y = parseInt(y);
+
+                    if (z == "+") {
+                        document.getElementById("result").value = x + y;
+                    }
+                    else if (z == "-") {
+                        document.getElementById("result").value = x - y;
+                    }
+                    else if (z == "*") {
+                        document.getElementById("result").value = x * y;
+                    }
+                    else if (z == "/") {
+                        document.getElementById("result").value = x / y;
+                    }
+                    else if (z == "%") {
+                        document.getElementById("result").value = x % y;
+                    }
+                }
+                document.getElementById("num1").addEventListener("change", calc);
+                document.getElementById("num2").addEventListener("change", calc);
+                document.getElementById("operation").addEventListener("change", calc);
+            });
+        </script>
+    </head>
+    <body>
+        <div id='wrapper'>
+            <header>
+                <h1>I Heart Arithmetic...</h1>
+            </header>
+            <form>
+                <input type="number" value="2" id="num1"> 
+                <select id="operation">
+                    <option>+</option>
+                    <option>-</option>
+                    <option>*</option>
+                    <option>/</option>
+                    <option>%</option>
+                </select>
+                <input type="number" value="2" id="num2">
+                <input type='text' id="result" value="" readonly><br>
+            </form>
+        </div>
+    </body>
+</html>

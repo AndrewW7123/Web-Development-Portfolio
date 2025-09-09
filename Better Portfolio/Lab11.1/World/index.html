@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--
+Andrew Whitehead
+Displays city information using AJAX
+-->
+<html>
+
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width">
+    <title>Cities by Population</title>
+    <script>
+        window.addEventListener("load", function() {
+            document.getElementById("submit").addEventListener("click", function(e) {
+                document.getElementById("loading").style.visibility = 'visible';
+                document.getElementById("min").disabled = true;
+                document.getElementById("max").disabled = true;
+                e.preventDefault();
+                let min = document.getElementById("min").value;
+                let max = document.getElementById("max").value;
+                let url = "world.php?min=" + min + "&max=" + max;
+                
+                fetch(url, { credentials: 'include' })
+                    .then(response => response.json())
+                    .then(data => {
+                        displayData(data);
+                    })
+            });
+            
+            function displayData(data) {
+                let info = document.getElementById("table");
+                document.getElementById("min").disabled = false;
+                document.getElementById("max").disabled = false;
+                document.getElementById("loading").style.visibility = 'hidden';
+                document.getElementById("header").style.visibility = 'visible';
+                
+                
+                for (let city of data) {
+                    info.innerHTML += "<tr><td>" + city.name + "</td><td>" + city.code + "</td><td>" + city.population + "</td></tr>";
+                }
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <div style="text-align: center;">
+        <h1>Cities by Population</h1>
+        <h2>Enter a min and max</h2>
+        <form id="form">
+            <input style="font-size: 25px; width: 300px;" type="number" id="min" name="min" placeholder="Min" min="0" required><br>
+            <input style="font-size: 25px; width: 300px;" type="number" id="max" name="max" placeholder="Max" min="0" required><br><br>
+            <input style="font-size: 25px;" type="submit" id="submit">
+        </form>
+        <h1 id="loading" style="visibility: hidden;">Loading...</h1>
+    </div>
+    <div style="display: flex; justify-content: center;">
+        <table style="font-size: 20px;">
+            <thead id="header" style="visibility: hidden;">
+                <tr><th>City</th><th>Code</th><th>Population</th></tr>
+            </thead>
+            <tbody id="table">                
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

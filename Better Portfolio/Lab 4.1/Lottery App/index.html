@@ -1,0 +1,63 @@
+<!doctype html>
+<!--
+First web page for week 1.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Lottery App</title>
+</head>
+
+<body>
+    <div>
+        <h1 style="text-align: center;">Lottery App</h1>
+        <script>
+            let d = []
+            let score = 0
+
+            for (i = 0; i < 100; i++) {
+                let x = Math.floor(Math.random() * 2);
+                let y = Math.floor(Math.random() * 101);
+                let ball = {points: y}
+
+                if (x == 0) {
+                    ball.color = 'red';
+                } 
+                else {
+                    ball.color = 'white';
+                }
+
+                d.push(ball);
+            }
+
+            let again = true;
+            while (again == true) {
+                let ans = prompt("Enter a ball number from 0-100: ");
+                if (ans == null) {
+                    again = false
+                } 
+                else if (0 < ans && ans < 101) {
+                    let b = d[ans]
+                    if (b.points == null) {
+                        alert("Already rolled this ball, try another!")
+                    }
+                    else if (b.color == 'white') {
+                        alert("You rolled a white ball worth " + b.points + " points!")
+                        score += b.points;
+                        b.points = null
+                    }
+                    else {
+                        alert("You rolled a red ball, you lose " + b.points + " points! Game Over!")
+                        score -= b.points;
+                        again = false
+                    }
+                }
+            }
+            alert("Your final score is: " + score + " points!")
+
+        </script>
+    </div>
+</body>
+
+</html>

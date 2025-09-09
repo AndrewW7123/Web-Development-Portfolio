@@ -1,0 +1,28 @@
+/*
+Andrew Whitehead
+CSS for a slots simulation
+*/
+
+body {
+    background-color: darkorange;
+}
+
+#container {
+    text-align: center;
+}
+
+#container img {
+    margin-bottom: 10%;
+}
+
+#roll {
+    font-size: 40px;
+    border-radius: 15%;
+    padding: 1%;
+    background-color: gold;
+    cursor: pointer;
+}
+
+#roll:hover {
+    background-color: rgb(195, 166, 4);
+}

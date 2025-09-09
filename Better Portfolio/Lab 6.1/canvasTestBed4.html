@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Canvas Test Bed</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <style type="text/css">
+        #testCanvas {
+            background-color: silver;
+            margin: 30px;
+        }
+        body {
+            text-align: center;
+            color:silver;
+            background-color: rgb(53, 66, 29);
+        }
+    </style>
+    <script>
+        window.addEventListener("load", function () {
+            let x = 60;
+            let y = 140;
+
+            // Draw the house
+            function house(event) {
+                let c = document.getElementById("testCanvas");
+                let ctx = c.getContext("2d");
+
+                ctx.strokeStyle = "brown";
+                ctx.lineWidth = 8;
+                ctx.strokeRect(x, y, 60, 60);
+                
+                // Set new line width and draw house roof
+                ctx.lineWidth = 6;
+                ctx.beginPath();
+                ctx.moveTo(x-5, y-2);
+                ctx.lineTo(x+30, y-32);
+                ctx.lineTo(x+65, y-2);
+                ctx.closePath();
+                ctx.stroke();
+                x += 110
+            }
+
+            // Draw the car
+            function car(event) {
+                let c = document.getElementById("testCanvas");
+                let ctx = c.getContext("2d");
+                let w = x-132;
+
+                // Car body
+                ctx.strokeStyle = "red";
+                ctx.fillStyle = "red";
+                ctx.lineWidth = 4;
+                ctx.beginPath();
+                ctx.moveTo(w, y+150);
+                ctx.lineTo(w+100, y+150);
+                ctx.lineTo(w+100, y+130);
+                ctx.lineTo(w+75, y+130);
+                ctx.lineTo(w+75, y+110);
+                ctx.lineTo(w+25, y+110);
+                ctx.lineTo(w+25, y+130);
+                ctx.lineTo(w, y+130);
+                ctx.closePath();
+                ctx.stroke();
+                ctx.fill();
+
+                // Left tire
+                ctx.beginPath();
+                ctx.arc(w+15, y+160, 8, 0, Math.PI*2);
+                ctx.closePath();
+                ctx.stroke();
+
+                // Right tire
+                ctx.beginPath();
+                ctx.arc(w+85, y+160, 8, 0, Math.PI*2);
+                ctx.closePath();
+                ctx.stroke();
+            }
+
+            // Draw the star
+            function star(event) {
+                let c = document.getElementById("testCanvas");
+                let ctx = c.getContext("2d");
+
+                // Random positions and colors for the stars
+                let w = Math.floor(Math.random() * 390);
+                let h = Math.floor(Math.random() * 90);
+                let s = "#";
+                for (i=0; i<6; i++) {
+                    let rand = Math.floor(Math.random() * 15);
+                    let symbols = "0123456789ABCDEF";
+                    s += symbols[rand];
+                }
+                ctx.fillStyle = s;
+                ctx.lineWidth = 4;
+
+                ctx.beginPath();
+                ctx.moveTo(w, h);
+                ctx.lineTo(w+10, h);
+                ctx.lineTo(w+15, h-10);
+                ctx.lineTo(w+20, h);
+                ctx.lineTo(w+30, h);
+                ctx.lineTo(w+20, h+6);
+                ctx.lineTo(w+25, h+15);
+                ctx.lineTo(w+15, h+10);
+                ctx.lineTo(w+5, h+15);
+                ctx.lineTo(w+10, h+6);
+                ctx.closePath();
+                ctx.fill();
+            }
+            document.getElementById("2").addEventListener("click", house);
+            document.getElementById("3").addEventListener("click", car);
+            document.getElementById("4").addEventListener("click", star);
+        });
+
+    </script>
+</head>
+
+<body>
+    <h1>Canvas Test Bed 4</h1>
+    <canvas id="testCanvas" width="400" height="400"></canvas>
+    <br>
+    <input type="button" value="Button 1">
+    <input type="button" value="House" id="2">
+    <input type="button" value="Car" id="3">
+    <input type="button" value="Star" id="4">
+</body>
+
+</html>
